@@ -1,0 +1,21 @@
+<div id='gallery<%= @gallery.id %>' class="s-pane selectable gallery" unique_uri="<%= request.env['REQUEST_URI'] %>">
+    <div class="toolbar">
+      <a href="#" class="back">Gallery</a>
+      <h1><img src="/iphone/images/logo.png" alt="" /></h1>
+      <a href='#' onclick="add_to_fav(); return false;" class='favourite' rel="external">Fav</a>
+    </div>
+    
+		<div id="gallery<%= @gallery.id %>-wrapper" class="s-scrollwrapper">
+		  <div id="gallery<%= @gallery.id %>-pane" class="s-scrollpane">
+        <ul class="photo_gallery">
+          <% index = 0 %>
+          <% @gallery.gallery_items.each do |item| %>
+          
+            <li><a gallery_id="<%= index %>" href="#"><img src="<%= item.image.url(:iphone_thumb)%>" alt="" /></a></li>
+            <% index += 1%>
+          <% end %>
+        </ul>
+        <span class="clear">&nbsp;</span>
+		  </div>
+		</div>
+</div>

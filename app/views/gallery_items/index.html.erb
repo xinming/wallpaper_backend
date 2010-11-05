@@ -1,0 +1,27 @@
+<h1>Listing gallery_items</h1>
+
+<table>
+  <tr>
+    <th>Preview</th>
+    <th>Gallery</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @gallery_items.each do |gallery_item| %>
+  <tr>
+    <td><%= image_tag gallery_item.image.url(:bb_small) %></td>
+    <td><%= gallery_item.try(:gallery).try(:title)%></td>
+    <td><%= link_to 'Show', gallery_item %></td>
+    <td><%= link_to 'Edit', edit_gallery_item_path(gallery_item) %></td>
+    <td><%= link_to 'Destroy', gallery_item, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gallery item', new_gallery_item_path %>
+
+

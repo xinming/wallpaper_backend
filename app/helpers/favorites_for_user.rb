@@ -1,0 +1,3 @@
+module FavoritesForUserHelper
+
+end

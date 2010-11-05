@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta charset='UTF-8' />
+    <title>
+      Wallpaper
+    </title>
+    <style media='screen' type='text/css'>
+      @import "/iphone/jqtouch/jqtouch/jqtouch.css";
+    </style>
+    <style media='screen' type='text/css'>
+      @import "/iphone/jqtouch/themes/jqt/theme.css";
+    </style>
+    <style media='screen' type='text/css'>
+      @import "/iphone/jqtouch/mobile.css";
+    </style>
+    <style media='screen' type='text/css'>
+      @import "/iphone/jqtouch/extensions/jqt.photo.css";
+    </style>
+    <style type="text/css" media="screen">@import "/iphone/jqtouch/extensions/jqt.bars/jqt.bars.css";</style>
+    <style type="text/css" media="screen">@import "/iphone/jqtouch/extensions/jqt.bars/themes/jqt/theme.css";</style>
+    <script charset='utf-8' src='/iphone/jqtouch/jqtouch/jquery-1.4.2.min.js' type='text/javascript'></script>
+    <script charset='utf-8' src='/iphone/jqtouch/jqtouch/jqtouch.js' type='application/x-javascript'></script>
+    <script charset='utf-8' src='/iphone/jqtouch/extensions/jqt.photo.js' type='application/x-javascript'></script>
+    <script charset='utf-8' src='/iphone/jqtouch/extensions/jqt.floaty.js' type='application/x-javascript'></script>
+    <script type="text/javascript" src="/iphone/json.js" type="text/javascript"></script>
+    <script src="/iphone/jqtouch/extensions/jqt.bars/jqt.bars.js" type="application/x-javascript" charset="utf-8"></script>
+    <script src="/iphone/jqtouch/extensions/jqt.iscroll/jqt.iscroll.js" type="application/x-javascript" charset="utf-8"></script>
+    
+    <script type="text/javascript" src="/iphone/adaptors/WebkitSQLiteAdaptor.js" type='text/javascript'></script>
+    <script type="text/javascript" src="/iphone/adaptors/LawnchairAdaptorHelpers.js" type='text/javascript'></script>
+    <script type="text/javascript" src="/iphone/Lawnchair.js" type='text/javascript'></script>
+    <script charset='utf-8' src='/iphone/jqtouch/mobile.js' type='text/javascript'></script>
+    <script type="text/javascript" charset="utf-8">
+
+    $(function(){
+      if($("body").hasClass("fullscreen")){
+      addEventListener('load', function(){ setTimeout(function(){window.scrollTo(0, 1)}, 0); }, false);
+      setTimeout(function(){
+        $('.floaty').makeFloaty({
+            spacing: 20,
+            time: '1.2s'
+        });
+      $('#floaty_close').click(function(){
+          $('.floaty').hideFloaty();
+          $(this).removeClass('active');
+          return false;
+      });
+      }, 1000);
+      }
+    });
+
+    </script>
+
+    <div id="tabbar">
+      <table class="six">
+        <tr>
+          <td>
+            <a href="#news" mask="/iphone/images/1.png">
+              <strong>News</strong>
+            </a>
+          </td>
+          <td>
+            <a href="#gallery" mask="/iphone/images/2.png">
+              <strong>Gallery</strong>
+            </a>
+          </td>
+          <td>
+            <a href="#videos" mask="/iphone/images/3.png">
+              <strong>Videos</strong>
+            </a>
+          </td>
+          <td>
+            <a href="#directory" mask="/iphone/images/4.png">
+              <strong>Directory</strong>
+            </a>
+          </td>
+          <td>
+            <a href="#favourites" mask="/iphone/images/5.png">
+              <strong>Favourites</strong>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    
+
+    
+    
+	<div id="jqt">
+	  <div id="splash" class="current" style="background: url(/iphone/images/Galaxy_Tab_iphone_AIS_edit.jpg)">
+	  </div>
+	  
+	  
+	  <div id="propaganda_container" class="advertising" style="background: url('/iphone/images/propaganda.png')">
+      <div class="toolbar">
+        <a href="#" class="back">Back</a>
+        
+      </div>
+      <div>&nbsp;</div>
+    </div>  
+
+
+    <div id="lh" class="advertising" style="background: url(/iphone/images/LH_splash.jpg)">
+      <div class="toolbar" >
+        <a href="#" class="back">Back</a>
+      </div>
+      
+      
+    </div>
+    
+    
+	  <div id="cover" >
+      <a href="#news" class="slide" style="text-indent:-1000px;display:block; width: 320px; height:420px; background: url('/iphone/images/cover.jpg')">News</a>
+      <a href="#banner_container" class="slide" style="text-indent:-1000px;display:block; width: 320px; height:40px; background: url('/iphone/images/banner_samsung.jpg')"></a>
+    </div>
+    
+    <div id="banner_container" class="advertising" style="background: url('/iphone/images/samsung_ad.jpg')">
+      <div class="toolbar" >
+        <a href="#" class="back">Back</a>
+      </div>
+    </div>
+    
+    
+
+    
+    <div id='news' class="s-pane selectable">
+        <div class="toolbar">
+          <h1><img src="/iphone/images/logo.png" alt="" /></h1>
+        </div>
+        
+				<div id="news-wrapper" class="s-scrollwrapper">
+				  <div id="news-pane" class="s-scrollpane">
+				    <ul id="news_list" class="wallpaper_list">
+              <!-- <li><a class="slide" href="#article">
+                <img src="/iphone/images/image.png" alt="" />
+                <h4>Visual Editions launches its first book</h4>
+                <span>LIFESTYLE | 29 SEPTEMBER 2010</span></a>
+              </li> -->
+				    </ul>
+				  </div>
+				</div>
+    </div>
+    
+    
+    
+    <div id='gallery' class="s-pane selectable">
+        <div class="toolbar">
+          <h1><img src="/iphone/images/logo.png" alt="" /></h1>
+        </div>
+        
+        <div id="gallery-wrapper" class="s-scrollwrapper">
+          <div id="gallery-pane" class="s-scrollpane">
+            <ul id="gallery_list" class="wallpaper_list">
+
+              <!-- <li><a href="">
+                  <img src="/iphone/images/image.png" alt="" />
+                  <h4>Visual Editions launches its first book</h4>
+                  <span>LIFESTYLE | 29 SEPTEMBER 2010</span></a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+    </div>
+    
+
+    <div id='directory' class="s-pane selectable">
+        <div class="toolbar">
+          <h1><img src="/iphone/images/logo.png" alt="" /></h1>
+        </div>
+        
+        <div id="directory-wrapper" class="s-scrollwrapper">
+          <div id="directory-pane" class="s-scrollpane">
+            <ul id="directory_list" class="wallpaper_list">
+
+              <!-- <li><a href="">
+                  <img src="/iphone/images/image.png" alt="" />
+                  <h4>Visual Editions launches its first book</h4>
+                  <span>LIFESTYLE | 29 SEPTEMBER 2010</span></a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+    </div>
+    
+		
+      <div id='videos' class="s-pane selectable">
+          <div class="toolbar">
+            <h1><img src="/iphone/images/logo.png" alt="" /></h1>
+          </div>
+
+          <div id="videos-wrapper" class="s-scrollwrapper">
+            <div id="videos-pane" class="s-scrollpane">
+              <ul id="video_list" class="wallpaper_list">
+                <li><a href="#video1" class="slide">
+                  <img src="/iphone/images/video_thumb.jpg" alt="" />
+                  <h4>Wallpaper Video</h4>
+                  <span>29 OCTOBER 2010</span></a>
+                </li> 
+              </ul>
+            </div>
+          </div>
+          
+          
+      </div>
+      
+      <div id="video1" class="s-pane selectable">
+        <div class="toolbar">
+          <h1><img src="/iphone/images/logo.png" alt="" /></h1>
+          <a href="#" class="back">Back</a>
+        </div>
+        
+        <!-- <div id="video1-wrapper" class="s-scrollwrapper">
+          <div id="video1-pane" class="s-scrollpane"> -->
+            <br /><br />
+            <div>
+              <embed style="" href="/iphone/videos/wpp_video.mp4" src="/iphone/images/video.png" autoplay="true" autohref="true" type="video/x-m4v" target="myself" scale="aspect" width="320", height="240">
+            </div>
+          <!-- </div>
+        </div> -->
+      </div>
+      
+      
+      
+    <div id='favourites' class="s-pane selectable">
+        <div class="toolbar">
+          <h1><img src="/iphone/images/logo.png" alt="" /></h1>
+        </div>
+        
+        <div id="favourites-wrapper" class="s-scrollwrapper">
+          <div id="favourites-pane" class="s-scrollpane">
+            <ul id="favourites_list" class="wallpaper_list">
+              <!-- <li><a href="">
+                <img src="/iphone/images/image.png" alt="" />
+                <h4>Visual Editions launches its first book</h4>
+                <span>LIFESTYLE | 29 SEPTEMBER 2010</span></a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    
+    
+    <div class="floaty" style="">
+      <div id="floaty_icon"></div>
+      <div style="margin-top: 15px;">Install this demo on your iPhone: <br />Tap <b style="font-size:15px">+</b> and then <b>'Add to Home Screen'</b></div>
+      <div id="floaty_arrow"></div>
+      <a id="floaty_close">&nbsp;</a>
+    </div>
+		
+
+	</div>
+  </body>
+</html>

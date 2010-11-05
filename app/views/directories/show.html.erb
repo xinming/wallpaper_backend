@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @directory.name %>
+</p>
+
+<p>
+  <b>Metadata:</b>
+  <%= @directory.metadata %>
+</p>
+
+<p>
+  <b>Subtitle:</b>
+  <%= @directory.subtitle %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @directory.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_directory_path(@directory) %> |
+<%= link_to 'Back', directories_path %>

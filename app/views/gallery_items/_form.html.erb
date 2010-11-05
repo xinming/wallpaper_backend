@@ -1,0 +1,10 @@
+<%= semantic_form_for @gallery_item, :html => { :multipart => true } do |f| %>
+<%f.inputs do%>
+
+<%= f.input :gallery , :include_blank => false%>
+<%= f.file_field :image%>
+<%= f.inputs :description %>
+<% end%>
+  <%= f.buttons %>
+
+<% end %>

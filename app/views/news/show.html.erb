@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @news.title %>
+</p>
+
+
+<p>
+  <b>SubTitle:</b>
+  <%= @news.subtitle %>
+</p>
+
+
+<p>
+  <b>By:</b>
+  <%= @news.by %>
+</p>
+
+
+
+<p>
+  <b>News category:</b>
+  <%= @news.try("news_category").try("name") %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @news.text %>
+</p>
+
+
+<p>
+  <b>Metadata:</b>
+  <%= @news.metadata %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @news.date %>
+</p>
+
+<p>
+ <%= image_tag @news.news.url(:iphone) %>
+</p>
+
+<%= link_to 'Edit', edit_news_path(@news) %> |
+<%= link_to 'Back', news_index_path %>

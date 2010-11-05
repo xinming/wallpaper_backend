@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>show_bb.html</title>
+  </head>
+  <body>
+    <style>
+    p{
+      font-size: 30%;
+      color: #555;
+      padding:20px 0 0 0;
+      font-family: serif;
+    }
+    div.article{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    div.heading{
+      padding-bottom: 30px;
+    }
+    h1{
+/*      font-family: serif;*/
+      font-size: 20px;
+      border-bottom: 1px solid #bbb;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      color: #444;
+    }
+
+    h2{
+      font-size: 16px;
+      color: #666;
+      padding-top: 5px;
+    }
+
+    h4{
+      font-size: 12px;
+      background: #eee;
+      padding: 8px;
+      color: #444;
+      border: 1px solid #ddd;
+    }
+    
+    .category_link{
+      padding: 8px;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      font-size: 10px;
+      color: red;
+    }
+    
+    span{
+      text-indent: 0px;
+      font-size: 8px;
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+    
+    
+    
+    </style>
+
+<div id='article<%= @news.id %>' class='s-pane selectable' unique_uri="<%= request.env['REQUEST_URI'] %>">
+	<div id='article<%= @news.id %>-wrapper' class='s-scrollwrapper'>
+	  <div id='article<%= @news.id %>-pane' class='s-scrollpane'>
+      <div class='article'>
+        <h1><%= @news.title %></h1>
+        <img src='<%=@news.news.url(:bb) %>' alt='' class='article_image' />
+        &nbsp;<br />
+        <div class='category_link'>
+          <b><%= @news.news_category.try(:name).upcase %></b>
+        </div>
+        <div class='content' style="padding-bottom: 20px">
+          <% paragraphs(@news.text).each do |p|%>
+            <p><%=p %></p>
+          <% end %>
+        </div>
+        <hr />
+        <div style="padding-top: 20px; color:#666;font-size:12px">
+          <%= @news.date %><br />
+          
+          <% paragraphs(@news.metadata).each do |p|%>
+            <%=p %><br />
+          <% end %>
+        </div>
+      </div>
+	  </div>
+	</div>
+</div>
+
+</html>

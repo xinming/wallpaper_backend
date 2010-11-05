@@ -1,0 +1,8 @@
+<% semantic_form_for @favorite do |f| %>
+  <%f.inputs do%>
+<%= f.input :user , :include_blank => false%>
+<%= f.input :news, :include_blank => false %>
+<% end %>
+  <%= f.buttons %>
+<% end %>
+

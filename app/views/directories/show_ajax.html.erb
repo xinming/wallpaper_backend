@@ -1,0 +1,25 @@
+<div id='directory<%= @directory.id %>' class='s-pane selectable' unique_uri="<%= request.env['REQUEST_URI'] %>">
+  <div class='toolbar'>
+    <a href='#' class='back'>directory</a>
+    <h1><img src='/iphone/images/logo.png' alt='' /></h1>
+  </div>
+	<div id='directory<%= @directory.id %>-wrapper' class='s-scrollwrapper'>
+	  <div id='directory<%= @directory.id %>-pane' class='s-scrollpane'>
+      <div class='article'>
+        <h2><%= @directory.name %></h2>
+        <img src='<%=@directory.image.url(:iphone) %>' alt='' class='article_image' />
+        <div class='content'>
+          <% paragraphs(@directory.text).each do |p|%>
+            <p><%=p %></p>
+          <% end %>
+        </div>
+        <span class='article_date'>
+          <%= @directory.date %><br />
+          <% paragraphs(@directory.metadata).each do |p|%>
+            <%=p %><br />
+          <% end %>
+        </span>
+      </div>
+	  </div>
+	</div>
+</div>

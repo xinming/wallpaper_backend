@@ -1,0 +1,30 @@
+<div id='news<%= @news.id %>' class='s-pane selectable' unique_uri="<%= request.env['REQUEST_URI'] %>">
+  <div class='toolbar'>
+    <a href='#' class='back'>News</a>
+    <h1><img src='/iphone/images/logo.png' alt='' /></h1>
+    <a href='#' onclick="add_to_fav(); return false;" class='favourite' rel="external">Fav</a>
+  </div>
+	<div id='news<%= @news.id %>-wrapper' class='s-scrollwrapper'>
+	  <div id='news<%= @news.id %>-pane' class='s-scrollpane'>
+      <div class='article'>
+        <h2><%= @news.title %></h2>
+        <img src='<%=@news.news.url(:iphone) %>' alt='' class='article_image' />
+        <p class="image_caption"><%=@news.caption %></p>
+        <div class='category_link'>
+          <%= @news.news_category.name %>
+        </div>
+        <div class='content'>
+          <% paragraphs(@news.text).each do |p|%>
+            <p><%=p %></p>
+          <% end %>
+        </div>
+        <span class='article_date'>
+          <%= @news.date %><br />
+          <% paragraphs(@news.metadata).each do |p|%>
+            <%=p %><br />
+          <% end %>
+        </span>
+      </div>
+	  </div>
+	</div>
+</div>

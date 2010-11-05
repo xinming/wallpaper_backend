@@ -1,0 +1,29 @@
+<h1>Listing galleries</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Preview</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @galleries.each do |gallery| %>
+  <tr>
+    <td><%= link_to gallery.title, "http://localhost:3000/filter_gallery_items/#{gallery.id}" %> </td>
+    <td><% if gallery.try("gallery_items") != [] %><%= image_tag gallery.gallery_items[0].image.url(:iphone_thumb) %><% end %></td>
+    <td><%= gallery.date %></td>
+    <td><%= link_to 'Show', gallery %></td>
+    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+    <td><%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gallery', new_gallery_path %>
+
+

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Gallery:</b>
+  <%= @gallery_item.gallery.title %>
+</p>
+
+<p>
+ IPHONE: 320x480<br />
+ <%= image_tag @gallery_item.image.url(:iphone_gallery) %>
+</p>
+
+<p>
+ BB: 480x360<br />
+ <%= image_tag @gallery_item.image.url(:bb) %>
+</p>
+<p>
+ BB_SMALL: 320x240<br />
+ <%= image_tag @gallery_item.image.url(:bb_small) %>
+</p>
+
+<p>
+ IPHONE_THUMB: 75x75<br />
+ <%= image_tag @gallery_item.image.url(:iphone_thumb) %>
+</p>
+
+
+
+
+
+<p>
+  <b>Description:</b>
+  <%= @gallery_item.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_gallery_item_path(@gallery_item) %> |
+<%= link_to 'Back', gallery_items_path %>
