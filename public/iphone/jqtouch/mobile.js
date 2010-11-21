@@ -71,10 +71,10 @@ function load_gallery(id){
 jQuery(function(){
 
   display_lists();
-  setTimeout(function(){
-    jQT.goTo("#cover");
-    
-  },4000);
+  // setTimeout(function(){
+  //   jQT.goTo("#cover");
+  //   
+  // },4000);
   
   
   $("#gallery").bind("pageAnimationEnd", {}, function(event, info){
@@ -88,10 +88,14 @@ jQuery(function(){
 
   $("#news").bind("pageAnimationEnd", {}, function(event, info){
       if (info.direction == 'in' && showing_toolbar == 0){
+        
         $('#tabbar').show(function () {
           jQT.setHeight();
+          // alert($("#tabbar a:last-child").html());
+          $("#tabbar a:first").click();
         });
         showing_toolbar = 1;
+        
       }
       else{
         // $("#tabbar").hide();
@@ -133,8 +137,8 @@ function display_lists(){
       var message_string = "<li><a class='slide' href=\"" + "/gallery_ajax/" + object.id + "\"><img src=\"" + object.thumbnail + "\" alt=\"\" /><h4>" + object.title + "</h4><span>" + object.date + "</span></a></li>"
       $('#gallery_list').append(message_string);
     }
-    var ad = "<li class='banner_list' ><a href='#propaganda_container' class='slide'><img src='/iphone/images/propaganda_banner.jpg' /></a></li>"
-    $(ad).insertAfter($($("#gallery_list li")[1]));
+    // var ad = "<li class='banner_list' ><a href='#propaganda_container' class='slide'><img src='/iphone/images/propaganda_banner.jpg' /></a></li>"
+    // $(ad).insertAfter($($("#gallery_list li")[1]));
   });
   
   $.getJSON( "/directories.json", function(data){
