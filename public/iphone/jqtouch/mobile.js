@@ -4,8 +4,13 @@ var jQT = new $.jQTouch({
   startupScreen:"/iphone/images/splash.png",
   statusBar:'default',
   icon:'/iphone/images/icon.png',
-  preloadImages:[
-  ],
+  preloadImages:["/iphone/images/cover.jpg",
+  "/iphone/images/1.png", 
+  "/iphone/images/2.png",
+  "/iphone/images/3.png",
+  "/iphone/images/4.png",
+  "/iphone/images/5.png",
+  "/iphone/images/back_button.png"],
   fullScreenClass: "fullscreen",
   onAjaxPageLoaded: function(element){
     
