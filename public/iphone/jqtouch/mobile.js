@@ -10,7 +10,8 @@ var jQT = new $.jQTouch({
   "/iphone/images/3.png",
   "/iphone/images/4.png",
   "/iphone/images/5.png",
-  "/iphone/images/back_button.png"],
+  "/iphone/images/back_button.png",
+  "toolbar_gradient.png"],
   fullScreenClass: "fullscreen",
   onAjaxPageLoaded: function(element){
     
