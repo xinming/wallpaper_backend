@@ -14,15 +14,11 @@
           <%= @news.news_category.name %>
         </div>
         <div class='content'>
-          <% paragraphs(@news.text).each do |p|%>
-            <p><%=p %></p>
-          <% end %>
+          <p><%= raw @news.text %></p>
         </div>
         <span class='article_date'>
           <%= @news.date %><br />
-          <% paragraphs(@news.metadata).each do |p|%>
-            <%=p %><br />
-          <% end %>
+          <%= raw @news.metadata %><br />
         </span>
       </div>
 	  </div>

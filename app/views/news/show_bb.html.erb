@@ -71,16 +71,12 @@
           <b><%= @news.news_category.try(:name).upcase %></b>
         </div>
         <div class='content' style="padding-bottom: 20px">
-          <% paragraphs(@news.text).each do |p|%>
-            <p><%=p %></p>
-          <% end %>
+          <%= raw @news.text %>
         </div>
         <hr />
         <div style="padding-top: 20px; color:#666;font-size:12px">
           <%= @news.date %><br />
-          
-          <% paragraphs(@news.metadata).each do |p|%>
-            <%=p %><br />
+          <%= raw @news.metadata %><br />
           <% end %>
         </div>
       </div>
