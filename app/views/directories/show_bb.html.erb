@@ -68,9 +68,7 @@
         <img src='<%=@directory.image.url(:bb) %>' alt='' class='article_image' />
         &nbsp;<br />
         <div class='content' style="padding-bottom: 20px">
-          <% paragraphs(@directory.text).each do |p|%>
-            <p><%=p %></p>
-          <% end %>
+          <p><%= raw @directory.text%></p>
         </div>
         <hr />
         <div style="padding-top: 20px; color:#666;font-size:12px">

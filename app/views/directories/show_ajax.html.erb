@@ -9,9 +9,7 @@
         <h2><%= @directory.name %></h2>
         <img src='<%=@directory.image.url(:iphone) %>' alt='' class='article_image' />
         <div class='content'>
-          <% paragraphs(@directory.text).each do |p|%>
-            <p><%=p %></p>
-          <% end %>
+            <p><%= raw @directory.text %></p>
         </div>
         <span class='article_date'>
           <%= @directory.date %><br />
