@@ -13,9 +13,7 @@
         </div>
         <span class='article_date'>
           <%= @directory.date %><br />
-          <% paragraphs(@directory.metadata).each do |p|%>
-            <%=p %><br />
-          <% end %>
+          <%=raw @directory.metadata %><br />
         </span>
       </div>
 	  </div>

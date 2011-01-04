@@ -73,10 +73,7 @@
         <hr />
         <div style="padding-top: 20px; color:#666;font-size:12px">
           <%= @directory.date %><br />
-          
-          <% paragraphs(@directory.metadata).each do |p|%>
-            <%=p %><br />
-          <% end %>
+          <%=raw @directory.metadata %><br />
         </div>
       </div>
 	  </div>
