@@ -30,7 +30,7 @@
           <% index = 0 %>
           <% @gallery.gallery_items.each do |item| %>
 
-            <li><a href="goToGalleryItem:<%= index %>"><img src="<%= item.image.url(:iphone_thumb)%>" alt="" /></a></li>
+            <li><a href="goToGalleryItem:<%= index %>"><img src="<%= URI.escape item.image.url(:iphone_thumb).gsub(/\?.*$/, "")%>" alt="" /></a></li>
             <% index += 1%>
           <% end %>
         </ul>

@@ -132,7 +132,7 @@ class MobileController < ApplicationController
       gallery.gallery_items.each do |item|
         hash = Hash.new
         hash[:gallery_src]   = URI.escape item.image.url(:iphone_gallery).gsub(/\?.*$/, "")
-        hash[:caption]       = item.description
+        hash[:caption]       = item.description.gsub(/<\/?[^>]*>/, "")
         hash[:caption] = nil if hash[:caption] == ""
         gallery_items_result.push hash
       end
