@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>
+      Wallpaper
+    </title>
+    <meta name = "viewport" content = "initial-scale=1.0,width = device-width,user-scalable = no">
+    <link rel="stylesheet" href="/iphone/jqtouch/mobile.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <style type="text/css" media="screen">
+      body{
+        background: #fff;
+        font-family: sans-serif;
+      }
+    </style>
+
+    <body>
+  <div id='news<%= @news.id %>'>
+        <div class='article'>
+          <h2><%= @news.title %></h2>
+          <img src='<%=@news.news.url(:iphone) %>' alt='' class='article_image' />
+          <p class="image_caption"><%=@news.caption %></p>
+          <div class='category_link'>
+            <%= @news.news_category.name %>
+          </div>
+          <div class='content'>
+            <p><%= raw @news.text %></p>
+          </div>
+          <span class='article_date'>
+            <%= @news.date %><br />
+            <%= raw @news.metadata %><br />
+          </span>
+        </div>
+  </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+

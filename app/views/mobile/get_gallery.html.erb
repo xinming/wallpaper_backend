@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>
+      Wallpaper
+    </title>
+    <meta name = "viewport" content = "initial-scale=1.0,width = device-width,user-scalable = no">
+    <link rel="stylesheet" href="/iphone/jqtouch/mobile.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <style type="text/css" media="screen">
+      body{
+        background: #fff;
+        font-family: sans-serif;
+      }
+      
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      li{
+        list-style: none;
+      }
+      ul{
+      }
+    </style>
+
+    <body>
+      <div id='gallery<%= @gallery.id %>'">
+        <ul class="photo_gallery">
+          <% index = 0 %>
+          <% @gallery.gallery_items.each do |item| %>
+
+            <li><a href="goToGalleryItem:<%= index %>"><img src="<%= item.image.url(:iphone_thumb)%>" alt="" /></a></li>
+            <% index += 1%>
+          <% end %>
+        </ul>
+        <span class="clear">&nbsp;</span>
+      </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
