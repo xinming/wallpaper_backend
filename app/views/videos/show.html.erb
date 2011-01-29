@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @video.title %>
+</p>
+
+<p>
+  <b>Subtitle:</b>
+  <%= @video.subtitle %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @video.date %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @video.text %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%= image_tag @video.image.url(:iphone_thumb) %>
+</p>
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

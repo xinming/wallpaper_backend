@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>
+      Wallpaper
+    </title>
+    <meta name = "viewport" content = "initial-scale=1.0,width = device-width,user-scalable = no">
+    <link rel="stylesheet" href="/iphone/jqtouch/mobile.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <style type="text/css" media="screen">
+      body{
+        background: #fff;
+        font-family: sans-serif;
+      }
+    </style>
+    <body>
+      
+    <div id='directory<%= @video.id %>' class='s-pane selectable' unique_uri="<%= request.env['REQUEST_URI'] %>">
+      <div class='article'>
+        <h2><%= @video.title %></h2>
+        <img src='<%=@video.image.url(:iphone) %>' alt='' class='article_image' />
+        <div class='content'>
+            <p><%= raw @video.text %></p>
+        </div>
+        <span class='article_date'>
+          <%= @video.date %><br />
+        </span>
+      </div>
+    </div>
+    
+    
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+

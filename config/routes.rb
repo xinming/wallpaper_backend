@@ -1,5 +1,7 @@
 Wallpaper::Application.routes.draw do
   
+  resources :videos
+
   resources :directories
 
  #resources :favorites
@@ -36,6 +38,28 @@ match 'filter_gallery_items/:id' => 'gallery_items#filter'
   match 'directory_ajax/:id' => 'directories#directory_ajax'
   match 'news_bb/:id' => 'news#news_bb'
   match 'directory_bb/:id' => 'directories#directory_bb'
+  
+  
+  
+  # match 'mobile/iphone_cover.:format' => 'mobile#iphone_cover'
+  # match 'mobile/article_categories.:format' => 'mobile#article_categories'
+  # match 'mobile/article_category/:id.:format' => 'mobile#article_category'
+  match 'mobile/news.json' => 'mobile#news'
+  match 'mobile/news/:id.html' => 'mobile#get_news'
+  
+  
+  match 'mobile/galleries.json' => 'mobile#galleries'
+  match 'mobile/gallery/:id.html' => 'mobile#get_gallery'
+  # match 'mobile/article/:id.:format' => 'mobile#article'
+  
+  match 'mobile/directories.json' => 'mobile#directories'
+  match 'mobile/directory/:id.html' => 'mobile#get_directory'
+  
+  match 'mobile/videos.json' => 'mobile#videos'
+  match 'mobile/video/:id.html' => 'mobile#get_video'
+  
+  
+  
   # Sample resource route with options:
   #   resources :products do
   #     member do
