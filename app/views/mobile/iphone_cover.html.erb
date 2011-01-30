@@ -50,9 +50,8 @@
       	}
       };
       
-      function goToCategory(id,i){
-        document.getElementById(id).setAttribute("class", "hover");
-        window.location='gotoArticleCategory:' + i;
+      function goToInside(){
+        window.location='FlipCover:'
         return false;
       }
       
@@ -72,7 +71,7 @@
       }
     </style>
     <div class=''>
-      <a id="cover" href="FlipCover:" style="text-indent:-1000px;display:block; width: 320px; height:460px; background: url('/iphone/images/cover.jpg') center bottom no-repeat">&nbsp;</a>
+      <a id="cover" href="#" ontouchstart="goToInside" style="text-indent:-1000px;display:block; width: 320px; height:460px; background: url('/iphone/images/cover.jpg') center bottom no-repeat">&nbsp;</a>
     </div>
   </body>
 
