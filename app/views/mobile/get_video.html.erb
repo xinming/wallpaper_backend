@@ -17,8 +17,11 @@
       
     <div id='directory<%= @video.id %>' class='s-pane selectable' unique_uri="<%= request.env['REQUEST_URI'] %>">
       <div class='article'>
-        <h2><%= @video.title %></h2>
-        <img src='<%=@video.image.url(:iphone) %>' alt='' class='article_image' />
+        <h2><%= @video.title %></h2>        
+        <a class="video" href="<%=@video.url %>">
+          <%=image_tag @video.image.url(:iphone) %>
+        </a>
+        
         <div class='content'>
             <p><%= raw @video.text %></p>
         </div>
