@@ -41,7 +41,7 @@ match 'filter_gallery_items/:id' => 'gallery_items#filter'
   
   
   
-  # match 'mobile/iphone_cover.:format' => 'mobile#iphone_cover'
+  match 'mobile/iphone_cover.:format' => 'mobile#iphone_cover'
   # match 'mobile/article_categories.:format' => 'mobile#article_categories'
   # match 'mobile/article_category/:id.:format' => 'mobile#article_category'
   match 'mobile/news.json' => 'mobile#news'

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang='th' xml:lang='th' xmlns='http://www.w3.org/1999/xhtml'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name = "viewport" content = "initial-scale=1.0,width = device-width,user-scalable = no">
+    <title>
+      Wallpaper
+    </title>
+    <script type="text/javascript" charset="utf-8">
+      function NoClickDelay(el) {
+      	this.element = el;
+      	if( window.Touch ) this.element.addEventListener('touchstart', this, false);
+      }
+
+      NoClickDelay.prototype = {
+      	handleEvent: function(e) {
+      		switch(e.type) {
+      			case 'touchstart': this.onTouchStart(e); break;
+      			case 'touchmove': this.onTouchMove(e); break;
+      			case 'touchend': this.onTouchEnd(e); break;
+      		}
+      	},
+
+      	onTouchStart: function(e) {
+      		e.preventDefault();
+      		this.moved = false;
+
+      		this.element.addEventListener('touchmove', this, false);
+      		this.element.addEventListener('touchend', this, false);
+      	},
+
+      	onTouchMove: function(e) {
+      		this.moved = true;
+      	},
+
+      	onTouchEnd: function(e) {
+      		this.element.removeEventListener('touchmove', this, false);
+      		this.element.removeEventListener('touchend', this, false);
+
+      		if( !this.moved ) {
+      			// Place your code here or use the click simulation below
+      			var theTarget = document.elementFromPoint(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+      			if(theTarget.nodeType == 3) theTarget = theTarget.parentNode;
+
+      			var theEvent = document.createEvent('MouseEvents');
+      			theEvent.initEvent('click', true, true);
+      			theTarget.dispatchEvent(theEvent);
+      		}
+      	}
+      };
+      
+      function goToCategory(id,i){
+        document.getElementById(id).setAttribute("class", "hover");
+        window.location='gotoArticleCategory:' + i;
+        return false;
+      }
+      
+      
+      document.onload = function(){
+        NoClickDelay(document.getElementById('cover'));
+      };
+    </script>
+
+  </head>
+
+  <body id="" onload="">
+    <style type="text/css" media="screen">
+      body, *{
+        margin:0px;
+        padding: 0px;
+      }
+    </style>
+    <div id="cover" class=''>
+      <a href="FlipCover:" style="text-indent:-1000px;display:block; width: 320px; height:460px; background: url('/iphone/images/cover.jpg') center bottom no-repeat">&nbsp;</a>
+    </div>
+  </body>
+
+</html>
