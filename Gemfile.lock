@@ -44,6 +44,7 @@ GEM
       mime-types
       treetop (>= 1.4.5)
     mime-types (1.16)
+    mimetype-fu (0.1.2)
     paperclip (2.3.3)
       activerecord
       activesupport
@@ -79,6 +80,7 @@ PLATFORMS
 DEPENDENCIES
   formtastic
   haml
+  mimetype-fu
   paperclip (= 2.3.3)
   rails (= 3.0.0)
   sqlite3-ruby

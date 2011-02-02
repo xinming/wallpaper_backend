@@ -6,7 +6,7 @@
       Wallpaper
     </title>
     <meta name = "viewport" content = "initial-scale=1.0,width = device-width,user-scalable = no">
-    <link rel="stylesheet" href="/iphone/jqtouch/mobile.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <%= raw embed_css("/iphone/jqtouch/mobile.css") %>
     <style type="text/css" media="screen">
       body{
         background: #fff;
@@ -17,7 +17,7 @@
     <div id='directory<%= @directory.id %>' class='s-pane selectable' unique_uri="<%= request.env['REQUEST_URI'] %>">
       <div class='article'>
         <h2><%= @directory.name %></h2>
-        <img src='<%=@directory.image.url(:iphone) %>' alt='' class='article_image' />
+        <img src='<%= image_to_base64 @directory.image.url(:iphone, false) %>' alt='' class='article_image' />
         <div class='content'>
             <p><%= raw @directory.text %></p>
         </div>

@@ -15,7 +15,7 @@ gem 'haml'
 
 # To use debugger
 # gem 'ruby-debug'
-
+  gem 'mimetype-fu'
 # Bundle the extra gems:
 # gem 'bj'
 # gem 'nokogiri'
