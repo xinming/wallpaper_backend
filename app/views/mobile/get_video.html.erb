@@ -6,13 +6,12 @@
       Wallpaper
     </title>
     <meta name = "viewport" content = "initial-scale=1.0,width = device-width,user-scalable = no">
-    <link rel="stylesheet" href="/iphone/jqtouch/mobile.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <%= raw embed_css("/iphone/jqtouch/mobile.css") %>
     <style type="text/css" media="screen">
       body{
         background: #fff;
         font-family: sans-serif;
       }
-      
       *{
          -webkit-tap-highlight-color:rgba(0,0,0,0);
       }
@@ -23,7 +22,7 @@
       <div class='article'>
         <h2><%= @video.title %></h2>        
         <a class="video" href="<%=@video.url %>">
-          <%=image_tag @video.image.url(:iphone) %>
+          <img src='<%= image_to_base64 @video.image.url(:iphone, false) %>' />
         </a>
         
         <div class='content'>

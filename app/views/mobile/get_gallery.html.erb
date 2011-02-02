@@ -6,7 +6,7 @@
       Wallpaper
     </title>
     <meta name = "viewport" content = "initial-scale=1.0,width = device-width,user-scalable = no">
-    <link rel="stylesheet" href="/iphone/jqtouch/mobile.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <%= raw embed_css("/iphone/jqtouch/mobile.css") %>
     <style type="text/css" media="screen">
       body{
         background: #fff;
@@ -16,6 +16,9 @@
       *{
         margin: 0px;
         padding: 0px;
+      }
+      a{
+         -webkit-tap-highlight-color:rgba(0,0,0,0);
       }
       li{
         list-style: none;
@@ -29,8 +32,7 @@
         <ul class="photo_gallery">
           <% index = 0 %>
           <% @gallery.gallery_items.each do |item| %>
-
-            <li><a href="goToGalleryItem:<%= index %>"><img src="<%= URI.escape item.image.url(:iphone_thumb).gsub(/\?.*$/, "")%>" alt="" /></a></li>
+            <li><a href="goToGalleryItem:<%= index %>"><img src="<%= image_to_base64 item.image.url(:iphone_thumb, false) %>" alt="" /></a></li>
             <% index += 1%>
           <% end %>
         </ul>
@@ -38,11 +40,3 @@
       </div>
   </body>
 </html>
-
-
-
-
-
-
-
-

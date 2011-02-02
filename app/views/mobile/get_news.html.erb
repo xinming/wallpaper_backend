@@ -6,7 +6,7 @@
       Wallpaper
     </title>
     <meta name = "viewport" content = "initial-scale=1.0,width = device-width,user-scalable = no">
-    <link rel="stylesheet" href="/iphone/jqtouch/mobile.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <%= raw embed_css("/iphone/jqtouch/mobile.css") %>
     <style type="text/css" media="screen">
       body{
         background: #fff;
@@ -18,7 +18,7 @@
   <div id='news<%= @news.id %>'>
         <div class='article'>
           <h2><%= @news.title %></h2>
-          <img src='<%=@news.news.url(:iphone) %>' alt='' class='article_image' />
+          <img src='<%=image_to_base64 @news.news.url(:iphone, false) %>' alt='' class='article_image' />
           <p class="image_caption"><%=@news.caption %></p>
           <div class='category_link'>
             <%= @news.news_category.name %>
