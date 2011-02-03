@@ -15,6 +15,9 @@
       *{
          -webkit-tap-highlight-color:rgba(0,0,0,0);
       }
+      a.video{
+        background: url(<%= raw image_to_base64(@video.image.url(:iphone, false)) %>) no-repeat 50% 50%;
+      }
     </style>
     <body>
       
@@ -22,7 +25,7 @@
       <div class='article'>
         <h2><%= @video.title %></h2>        
         <a class="video" href="<%=@video.url %>">
-          <img src='<%= image_to_base64 @video.image.url(:iphone, false) %>' />
+          <img src='<%= image_to_base64 "/images/play.png" %>' />
         </a>
         
         <div class='content'>
