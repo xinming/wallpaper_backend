@@ -16,7 +16,7 @@
     <body>
     <div id='directory<%= @directory.id %>' class='s-pane selectable' unique_uri="<%= request.env['REQUEST_URI'] %>">
       <div class='article'>
-        <h2><%= @directory.name %></h2>
+        <h2><%= @directory.name.titleize %></h2>
         <img src='<%= image_to_base64 @directory.image.url(:iphone, false) %>' alt='' class='article_image' />
         <div class='content'>
             <p><%= raw @directory.text %></p>
