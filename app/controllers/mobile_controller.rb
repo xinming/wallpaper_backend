@@ -141,7 +141,7 @@ class MobileController < ApplicationController
       end
       
       gallery_result[:title] = gallery.title.titleize
-      gallery_result[:subtitle] = gallery.date.upcase
+      gallery_result[:subtitle] = gallery.date
       gallery_result[:date] = gallery.date
       gallery_result[:thumbnail_src] = URI.escape gallery.gallery_items[0].image.url(:iphone_thumb).gsub(/\?.*$/, "")
       gallery_result[:gallery]  =  gallery_items_result
