@@ -74,10 +74,11 @@ class MobileController < ApplicationController
   
   def news
     articles_list = Array.new
-    News.all.each do |article|
+    all_news = News.find(:all, :order=>"created_at DESC")
+    all_news.each do |article|
       article_result = Hash.new
-      article_result[:title]    =  article.title
-      article_result[:subtitle] =  "#{article.news_category.name} | #{article.date}"
+      article_result[:title]    =  article.title.titleize
+      article_result[:subtitle] =  "#{article.news_category.name} | #{article.date}".upcase
       article_result[:date]     =  article.date
       article_result[:gallery]  =  nil
       article_result[:type] = "article"
@@ -91,10 +92,11 @@ class MobileController < ApplicationController
   
   def videos
     articles_list = Array.new
-    Video.all.each do |article|
+    all_videos = Video.find(:all, :order=>"created_at DESC")
+    all_videos.each do |article|
       article_result = Hash.new
-      article_result[:title]    =  article.title
-      article_result[:subtitle] =  "#{article.date}"
+      article_result[:title]    =  article.title.titleize
+      article_result[:subtitle] =  "#{article.date}".upcase
       article_result[:date]     =  article.date
       article_result[:gallery]  =  nil
       article_result[:type] = "article"
@@ -107,10 +109,11 @@ class MobileController < ApplicationController
     
   def directories
     articles_list = Array.new
-    Directory.all.each do |article|
+    all_directories = Directory.find(:all, :order=> "created_at DESC")
+    all_directories.each do |article|
       article_result = Hash.new
-      article_result[:title]    =  article.name
-      article_result[:subtitle] =  "#{article.date}"
+      article_result[:title]    =  article.name.titleize
+      article_result[:subtitle] =  "#{article.date}".upcase
       article_result[:date]     =  article.date
       article_result[:gallery]  =  nil
       article_result[:type] = "article"
@@ -124,8 +127,8 @@ class MobileController < ApplicationController
   
   def galleries
     result= Array.new
-    Gallery.all.each do |gallery|
-      
+    all_galleries = Gallery.find(:all, :order=>"created_at DESC")
+    all_galleries.each do |gallery|
       gallery_result = Hash.new
       
       gallery_items_result = Array.new
@@ -137,8 +140,8 @@ class MobileController < ApplicationController
         gallery_items_result.push hash
       end
       
-      gallery_result[:title] = gallery.title
-      gallery_result[:subtitle] = gallery.date
+      gallery_result[:title] = gallery.title.titleize
+      gallery_result[:subtitle] = gallery.date.upcase
       gallery_result[:date] = gallery.date
       gallery_result[:thumbnail_src] = URI.escape gallery.gallery_items[0].image.url(:iphone_thumb).gsub(/\?.*$/, "")
       gallery_result[:gallery]  =  gallery_items_result
