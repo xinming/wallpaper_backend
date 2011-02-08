@@ -154,35 +154,62 @@ class MobileController < ApplicationController
   
   def get_gallery
     @gallery = Gallery.find(params[:id])
-    render :layout => false
+    output = (render_to_string :layout=>false)
+    gziped_output = ActiveSupport::Gzip::compress(output)
+    response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+    response.headers['Content-Type'] = "text/html;charset=utf-8"
+    response.headers['Content-Encoding'] = "gzip"
+    render :text => gziped_output
+    # render :layout => false
   end
 
   def get_news
     @news = News.find(params[:id])
-    render :layout => false
+    output = (render_to_string :layout=>false)
+    gziped_output = ActiveSupport::Gzip::compress(output)
+    response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+    response.headers['Content-Type'] = "text/html;charset=utf-8"
+    response.headers['Content-Encoding'] = "gzip"
+    render :text => gziped_output
+    # render :layout => false
   end
   
   def get_video
     @video = Video.find(params[:id])
-    render :layout => false
+    output = (render_to_string :layout=>false)
+    gziped_output = ActiveSupport::Gzip::compress(output)
+    response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+    response.headers['Content-Type'] = "text/html;charset=utf-8"
+    response.headers['Content-Encoding'] = "gzip"
+    render :text => gziped_output
+    # render :layout => false
   end
 
   def get_directory
     @directory = Directory.find(params[:id])
-    render :layout => false
+    output = (render_to_string :layout=>false)
+    gziped_output = ActiveSupport::Gzip::compress(output)
+    response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+    response.headers['Content-Type'] = "text/html;charset=utf-8"
+    response.headers['Content-Encoding'] = "gzip"
+    render :text => gziped_output
+    # render :layout => false
   end
   
   
+  # 
+  # def article
+  #   @article = Article.find(params[:id])
+  #   
+  #   @galleries = []
+  #   @article.galleries.each do |gallery|
+  #     @galleries.push gallery if gallery.hide != true
+  #   end
+  #   
+  #   render :layout => false 
+  # end
   
-  def article
-    @article = Article.find(params[:id])
-    
-    @galleries = []
-    @article.galleries.each do |gallery|
-      @galleries.push gallery if gallery.hide != true
-    end
-    
-    render :layout => false 
-  end
+
+  
   
 end
