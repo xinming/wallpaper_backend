@@ -1,6 +1,19 @@
 class MobileController < ApplicationController
   def iphone_cover
-    render :layout=>false
+    cacheTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) + 60 rescue nil
+    modified_time = File.mtime(File.expand_path('../../views/mobile/iphone_cover.html.erb', __FILE__))
+    if cacheTime and modified_time <= cacheTime
+      return render :nothing => true, :status => 304
+    # Either non-conditional request, or timestamp is outdated, serve the request
+    else
+      output = (render_to_string :layout=>false)
+      gziped_output = ActiveSupport::Gzip::compress(output)
+      response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+      response.headers['Content-Type'] = "text/html;charset=utf-8"
+      response.headers['Content-Encoding'] = "gzip"
+      response.headers['Last-Modified'] = modified_time.httpdate
+      render :text => gziped_output
+    end
   end
   
   # JSON
@@ -154,46 +167,76 @@ class MobileController < ApplicationController
   
   def get_gallery
     @gallery = Gallery.find(params[:id])
-    output = (render_to_string :layout=>false)
-    gziped_output = ActiveSupport::Gzip::compress(output)
-    response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
-    response.headers['Content-Type'] = "text/html;charset=utf-8"
-    response.headers['Content-Encoding'] = "gzip"
-    render :text => gziped_output
-    # render :layout => false
+
+    cacheTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) + 60 rescue nil
+     # if conditional request and cacheTime is equals or less than created_at timestamp.. use cache!
+    if cacheTime and @gallery.created_at <= cacheTime
+      return render :nothing => true, :status => 304
+    # Either non-conditional request, or timestamp is outdated, serve the request
+    else
+      output = (render_to_string :layout=>false)
+      gziped_output = ActiveSupport::Gzip::compress(output)
+      response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+      response.headers['Content-Type'] = "text/html;charset=utf-8"
+      response.headers['Content-Encoding'] = "gzip"
+      response.headers['Last-Modified'] = @gallery.created_at.httpdate
+      render :text => gziped_output
+    end
+    
   end
 
   def get_news
     @news = News.find(params[:id])
-    output = (render_to_string :layout=>false)
-    gziped_output = ActiveSupport::Gzip::compress(output)
-    response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
-    response.headers['Content-Type'] = "text/html;charset=utf-8"
-    response.headers['Content-Encoding'] = "gzip"
-    render :text => gziped_output
-    # render :layout => false
+    cacheTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) + 60 rescue nil
+     # if conditional request and cacheTime is equals or less than created_at timestamp.. use cache!
+    if cacheTime and @news.created_at <= cacheTime
+      return render :nothing => true, :status => 304
+    # Either non-conditional request, or timestamp is outdated, serve the request
+    else
+      output = (render_to_string :layout=>false)
+      gziped_output = ActiveSupport::Gzip::compress(output)
+      response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+      response.headers['Content-Type'] = "text/html;charset=utf-8"
+      response.headers['Content-Encoding'] = "gzip"
+      response.headers['Last-Modified'] = @news.created_at.httpdate
+      render :text => gziped_output
+    end
   end
   
   def get_video
     @video = Video.find(params[:id])
-    output = (render_to_string :layout=>false)
-    gziped_output = ActiveSupport::Gzip::compress(output)
-    response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
-    response.headers['Content-Type'] = "text/html;charset=utf-8"
-    response.headers['Content-Encoding'] = "gzip"
-    render :text => gziped_output
-    # render :layout => false
+    cacheTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) + 60 rescue nil
+     # if conditional request and cacheTime is equals or less than created_at timestamp.. use cache!
+    if cacheTime and @video.created_at <= cacheTime
+      return render :nothing => true, :status => 304
+    # Either non-conditional request, or timestamp is outdated, serve the request
+    else
+      output = (render_to_string :layout=>false)
+      gziped_output = ActiveSupport::Gzip::compress(output)
+      response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+      response.headers['Content-Type'] = "text/html;charset=utf-8"
+      response.headers['Content-Encoding'] = "gzip"
+      response.headers['Last-Modified'] = @video.created_at.httpdate
+      render :text => gziped_output
+    end
   end
 
   def get_directory
     @directory = Directory.find(params[:id])
-    output = (render_to_string :layout=>false)
-    gziped_output = ActiveSupport::Gzip::compress(output)
-    response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
-    response.headers['Content-Type'] = "text/html;charset=utf-8"
-    response.headers['Content-Encoding'] = "gzip"
-    render :text => gziped_output
-    # render :layout => false
+    cacheTime = Time.rfc2822(request.env["HTTP_IF_MODIFIED_SINCE"]) + 60 rescue nil
+     # if conditional request and cacheTime is equals or less than created_at timestamp.. use cache!
+    if cacheTime and @directory.created_at <= cacheTime
+      return render :nothing => true, :status => 304
+    # Either non-conditional request, or timestamp is outdated, serve the request
+    else
+      output = (render_to_string :layout=>false)
+      gziped_output = ActiveSupport::Gzip::compress(output)
+      response.headers['Content-Length'] = gziped_output.mb_chars.size.to_s
+      response.headers['Content-Type'] = "text/html;charset=utf-8"
+      response.headers['Content-Encoding'] = "gzip"
+      response.headers['Last-Modified'] = @directory.created_at.httpdate
+      render :text => gziped_output
+    end
   end
   
   
