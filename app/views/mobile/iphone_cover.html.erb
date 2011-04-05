@@ -60,6 +60,9 @@
         -webkit-tap-highlight-color:rgba(0,0,0,0);
       }
     </style>
-    <a id="cover" href="FlipCover:" style="display:block; width: 320px; height:460px;background:url(<%= image_to_base64 "/iphone/images/cover.jpg" %>) center bottom no-repeat">
+    <a id="cover" href="FlipCover:" style="display:block; width: 320px; height:420px;background:url(<%= image_to_base64 "/iphone/images/cover.jpg" %>) center top no-repeat"></a>
+      <a href="http://<%= request.env["HTTP_HOST"] %>/ipad.html" id="ipad">
+        <img src='<%= raw image_to_base64 "/iphone/images/wallpaper_ipad_banner.png" %>' alt="" />
+      </a>
   </body>
 </html>
