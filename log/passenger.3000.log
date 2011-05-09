@@ -1,0 +1,24 @@
+[ pid=15851 thr=0x1004b5000 file=ext/nginx/HelperAgent.cpp:568 time=2010-10-05 04:08:59.324 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.
+[ pid=15851 thr=0x101136000 file=ext/nginx/HelperAgent.cpp:568 time=2010-10-05 04:20:20.710 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.
+[ pid=16651 thr=0x1002e7000 file=ext/nginx/HelperAgent.cpp:568 time=2010-10-05 04:57:48.209 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.
+[ pid=656 thr=0x10051d000 file=ext/nginx/HelperAgent.cpp:568 time=2010-10-05 17:38:27.907 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.
+[ pid=656 thr=0x100585000 file=ext/nginx/HelperAgent.cpp:568 time=2010-10-05 17:38:32.216 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.
+[ pid=656 thr=0x1005ed000 file=ext/nginx/HelperAgent.cpp:568 time=2010-10-05 17:38:33.245 ]: Couldn't forward the HTTP response back to the HTTP client: It seems the user clicked on the 'Stop' button in his browser.
+[ pid=30945 thr=2148237740 file=utils.rb:176 time=2010-10-18 17:08:12.987 ]: *** Exception SignalException in PhusionPassenger::Rack::ApplicationSpawner (SIGTERM) (process 30945, thread #<Thread:0x100170358>):
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:343:in `select'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:343:in `server_main_loop'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:180:in `start'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/rack/application_spawner.rb:128:in `start'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:253:in `spawn_rack_application'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:246:in `spawn_rack_application'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:244:in `spawn_rack_application'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:137:in `spawn_application'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `__send__'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'
+	from /Users/x/.passenger/standalone/3.0.0.pre4-universal-ruby1.8.7-x86_64-macosx-10.6/support/helper-scripts/passenger-spawn-server:99
